@@ -1,6 +1,10 @@
 package com.example.base.remote
 
+import com.google.gson.annotations.SerializedName
+
 data class TopicSubmissions(
+
+    @SerializedName("business-work")
     val business_work: BusinessWork,
     val experimental: Experimental,
     val fashion: Fashion,
