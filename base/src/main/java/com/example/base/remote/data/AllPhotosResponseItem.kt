@@ -1,6 +1,6 @@
-package com.example.base.remote
+package com.example.base.remote.data
 
-data class ApiResponseItem(
+data class AllPhotosResponseItem(
     val alt_description: Any,
     val blur_hash: String,
     val categories: List<Any>,

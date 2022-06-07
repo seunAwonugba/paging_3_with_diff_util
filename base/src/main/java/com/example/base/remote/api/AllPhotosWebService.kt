@@ -1,7 +1,8 @@
-package com.example.base
+package com.example.base.remote.api
 
+import com.example.base.BuildConfig
 import com.example.base.Constants.GET_ALL_PHOTOS_END_POINT
-import com.example.base.remote.ApiResponse
+import com.example.base.remote.data.AllPhotosResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers
@@ -15,5 +16,5 @@ interface AllPhotosWebService {
         @Query("page") page: Int,
         @Query("per_page") per_page : Int,
         @Query("order_by") order_by : String
-    ) : Response<ApiResponse>
+    ) : Response<AllPhotosResponse>
 }

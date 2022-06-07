@@ -1,6 +1,9 @@
 package com.example.diffutilpaging.di
 
-import com.example.base.AllPhotosWebService
+import com.example.base.remote.api.AllPhotosWebService
+import com.example.base.remote.api.SinglePhotosWebService
+import com.example.base.repository.AllPhotosRepository
+import com.example.base.repository.AllPhotosRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,7 +18,19 @@ object RepositoryModule {
 
     @Singleton
     @Provides
-    fun provideAllPhotosWebService(retrofit: Retrofit) : AllPhotosWebService{
+    fun provideAllPhotosWebService(retrofit: Retrofit) : AllPhotosWebService {
         return retrofit.create()
     }
+
+    @Singleton
+    @Provides
+    fun provideSinglePhotosWebService(retrofit: Retrofit) : SinglePhotosWebService {
+        return retrofit.create()
+    }
+
+    @Singleton
+    @Provides
+    fun provideAllPhotosWebserviceToRepository(
+        allPhotosWebService: AllPhotosWebService
+    ) : AllPhotosRepository = AllPhotosRepositoryImpl(allPhotosWebService)
 }
