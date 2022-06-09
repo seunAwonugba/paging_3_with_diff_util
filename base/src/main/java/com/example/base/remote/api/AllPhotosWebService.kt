@@ -15,6 +15,6 @@ interface AllPhotosWebService {
     suspend fun getAllPhotos(
         @Query("page") page: Int,
         @Query("per_page") per_page : Int,
-        @Query("order_by") order_by : String
+        @Query("order_by") order_by : String = "latest"
     ) : Response<AllPhotosResponse>
 }
