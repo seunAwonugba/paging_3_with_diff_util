@@ -1,6 +1,8 @@
 package com.example.base.repository
 
+import androidx.paging.PagingData
 import com.example.base.ui.AllPhotosData
+import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 
 interface AllPhotosRepository {
@@ -8,5 +10,7 @@ interface AllPhotosRepository {
         page : Int,
         per_page : String,
         order_by : String
-    ) : Response<AllPhotosData>
+    ) : Flow<PagingData<AllPhotosData>>
 }
+
+

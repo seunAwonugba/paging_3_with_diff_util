@@ -3,8 +3,6 @@ package com.example.base.repository.paging
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.base.remote.api.AllPhotosWebService
-import com.example.base.remote.data.AllPhotosResponse
-import com.example.base.remote.data.AllPhotosResponseItem
 import com.example.base.ui.AllPhotosData
 import retrofit2.HttpException
 import java.io.IOException
@@ -14,7 +12,7 @@ class AllPhotosPagingSource @Inject constructor(
     private val allPhotosWebService: AllPhotosWebService
 ) : PagingSource<Int, AllPhotosData>() {
     override fun getRefreshKey(state: PagingState<Int, AllPhotosData>): Int? {
-        TODO("Not yet implemented")
+        return null
     }
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, AllPhotosData> {
